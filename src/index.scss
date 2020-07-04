@@ -1,6 +1,34 @@
+:root {
+  --scissors-gradient: radial-gradient(
+    circle,
+    hsl(39, 89%, 49%),
+    hsl(40, 84%, 53%)
+  );
+  --paper-gradient: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --rock-gradient: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --Lizard-gradient: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  --cyan: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  --radial-gradient: radial-gradient(
+    circle,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  @media only screen and (max-width: 53.125em) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: 40.625em) {
+    font-size: 40%;
+  }
 }
 
 *,
@@ -16,6 +44,37 @@ body {
   font-size: 1.6rem;
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1;
   -webkit-tap-highlight-color: transparent;
+  background-image: var(--radial-gradient);
+  position: relative;
 }
+
+.container {
+  width: 50vw;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 53.125em) {
+    width: 80vw;
+  }
+}
+
+.padding5 {
+  padding-top: 5rem;
+}
+
+.main {
+  margin: 0 auto;
+  margin-top: 6rem;
+  text-align: center;
+
+  /* @media only screen and (max-width: 40.625em) {
+    margin-top: 20rem;
+  } */
+}
+
+@import './scss/header';
+@import './scss/play';
+@import './scss/footer';
+@import './scss/rules';
+@import './scss/menu';

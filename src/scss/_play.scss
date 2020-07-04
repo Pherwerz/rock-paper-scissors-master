@@ -1,0 +1,62 @@
+.play {
+  background-image: url(./img/bg-triangle.svg);
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  display: inline-grid;
+  grid-template-columns: repeat(2, 18rem);
+  grid-template-rows: repeat(2, 18rem);
+  grid-row-gap: 2rem;
+  grid-column-gap: 6rem;
+  align-items: center;
+  justify-items: center;
+  //display: none;
+
+  &__button {
+    height: 18rem;
+    width: 18rem;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &--bg {
+      background-color: #d4d4d4;
+      width: 75%;
+      height: 75%;
+      border-radius: 50%;
+      box-shadow: 0 0.7rem 0 0 #bdbcbc inset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__image {
+    width: 45%;
+  }
+
+  &__paper {
+    background-image: var(--paper-gradient);
+    box-shadow: 0 -0.8rem 0 0 hsl(230, 89%, 52%) inset;
+  }
+
+  &__scissors {
+    background-image: var(--scissors-gradient);
+    box-shadow: 0 -0.8rem 0 0 hsl(39, 89%, 39%) inset;
+  }
+
+  &__rock {
+    background-image: var(--rock-gradient);
+    box-shadow: 0 -0.8rem 0 0 hsl(349, 71%, 42%) inset;
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+  }
+}
