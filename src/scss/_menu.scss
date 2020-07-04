@@ -17,6 +17,10 @@
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-width: 28.125em) {
+      margin-top: 10rem;
+    }
+
     & > * {
       display: none;
     }
@@ -26,6 +30,10 @@
       color: #ffffff;
       text-shadow: 0.2rem 0.2rem 0 #000000;
       margin-bottom: 2rem;
+
+      @media only screen and (max-width: 28.125em) {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -45,6 +53,7 @@
 
     @media only screen and (max-width: 28.125em) {
       padding: 1.5rem 2rem;
+      font-size: 1rem;
     }
 
     &:focus {
@@ -131,6 +140,12 @@
     border-radius: 50%;
     position: absolute;
     top: 35%;
+
+    @media only screen and (max-width: 28.125em) {
+      height: 15rem;
+      width: 15rem;
+      top: 45%;
+    }
   }
 
   &__dark {
