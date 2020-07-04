@@ -15,11 +15,16 @@ const paper = document.querySelector('.play__paper, .play__paper *');
 const scissors = document.querySelector('.play__scissors, .play__scissors *');
 const rock = document.querySelector('.play__rock, .play__rock *');
 const score = document.querySelector('.header__score');
+const menuLightyou = Array.from(document.querySelectorAll('.you'));
+const menuLightComp = Array.from(document.querySelectorAll('.com'));
 let totalScore = 0;
 let addedCompClass;
 let addedYouClass;
 
-if (localStorage.getItem('score') !== 'undefined') {
+if (
+  typeof localStorage.getItem('score') !== 'undefined' &&
+  localStorage.getItem('score') !== null
+) {
   totalScore = localStorage.getItem('score');
   score.textContent = totalScore;
 } else {
@@ -31,6 +36,9 @@ const wins = () => {
   decision.style.display = 'block';
   menuButton.style.display = 'block';
   menuButton.style.color = 'var(--dark-text)';
+  menuLightyou.forEach((cur, i) => {
+    cur.style.transform = `scale(${i + 1.5})`;
+  });
   totalScore++;
   localStorage.setItem('score', totalScore);
   score.textContent = totalScore;
@@ -40,6 +48,9 @@ const lose = () => {
   decision.style.display = 'block';
   menuButton.style.display = 'block';
   menuButton.style.color = 'hsl(349, 71%, 52%)';
+  menuLightComp.forEach((cur, i) => {
+    cur.style.transform = `scale(${i + 1.5})`;
+  });
   totalScore--;
   localStorage.setItem('score', totalScore);
   score.textContent = totalScore;
@@ -114,6 +125,12 @@ menuButton.addEventListener('click', () => {
   play.style.display = 'inline-grid';
   menuComp.classList.remove(addedCompClass);
   youPick.classList.remove(addedYouClass);
+  menuLightyou.forEach(cur => {
+    cur.style.transform = `scale(0)`;
+  });
+  menuLightComp.forEach(cur => {
+    cur.style.transform = `scale(0)`;
+  });
 });
 
 rulesButton.addEventListener('click', () => {

@@ -36,6 +36,8 @@
     border-radius: 1rem;
     color: hsl(349, 71%, 52%);
     cursor: pointer;
+    position: relative;
+    z-index: 100;
 
     @media only screen and (max-width: 40.625em) {
       padding: 1.5rem 3rem;
@@ -137,20 +139,23 @@
 
   &__light {
     background-color: #ffffff05;
-    display: none;
+    //display: none;
+    transition: all 0.5s;
 
     &-1 {
-      transform: scale(2);
+      //transform: scale(2);
+      transition-delay: 0.25s;
       z-index: 3;
     }
 
     &-2 {
-      transform: scale(2.7);
+      //transform: scale(2.7);
+      transition-delay: 0.25s;
       z-index: 2;
     }
 
     &-3 {
-      transform: scale(3.5);
+      //transform: scale(3.5);
       z-index: 1;
     }
   }
